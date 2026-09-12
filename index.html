@@ -456,11 +456,10 @@
         });
       }
 
-      // 4) 滚动：各元素以不同速度上移（视差）并淡出
+      // 4) 滚动：各元素以不同速度轻微上移（视差），保持可见、不淡出
       items.forEach(function (el, i) {
         gsap.to(el, {
-          yPercent: -(20 + (i % 5) * 12),
-          opacity: 0,
+          yPercent: -(8 + (i % 5) * 6),
           ease: 'none',
           scrollTrigger: {
             trigger: '.desk',
@@ -471,9 +470,9 @@
         });
       });
 
-      // 中央名字反向视差并渐隐，拉开层次
+      // 中央名字轻微反向视差并渐淡，拉开层次
       gsap.to('.hero-name', {
-        yPercent: -30, opacity: 0.15,
+        yPercent: -20, opacity: 0.35,
         ease: 'none',
         scrollTrigger: {
           trigger: '.desk',
